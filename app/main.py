@@ -1,3 +1,8 @@
+import sys
+import os
+
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 from commands import builtins, utils
 
 def main():
@@ -9,10 +14,7 @@ def main():
         cmd_name = res[0]
         args = res[1:]
 
-        if cmd_name == "exit":
-            break
-
-        elif cmd_name in builtins.COMMAND_REGISTRY:
+        if cmd_name in builtins.COMMAND_REGISTRY:
             builtins.COMMAND_REGISTRY[cmd_name](args)
 
         else:

@@ -1,5 +1,10 @@
 from commands import utils
 import os
+import sys
+
+def run_exit(_):
+    sys.exit(0)
+
 
 def run_echo(args):
     ### Outputs contents after echo command ###
@@ -29,6 +34,7 @@ def run_pwd(_):
     print(os.getcwd())
 
 COMMAND_REGISTRY = {
+    "exit": run_exit,
     "echo": run_echo,
     "type": run_type,
     "pwd": run_pwd,
