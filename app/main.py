@@ -7,6 +7,8 @@ def main():
 
         if cmd == "exit":
             break
+        elif cmd[:5] == "echo ":
+            print(cmd[5:])
         else:
             print(f"{cmd}: command not found")
 
